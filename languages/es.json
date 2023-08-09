@@ -1,0 +1,18 @@
+{
+    "profile":{
+      "name":"Perfil de Rafael Montaner",
+      "rol":"Desarrollador || Abogado",
+      "description":"Soy un novell desarrollador con conocimiento de tecnologías como Java, Pyhton, HTML, CSS, JS, SQL, Mongo DB, y en constante estudio. Estoy aprendiendo REACT, y además estudiando la implementación de IA en aplicaciones. Soy abogado, pero en 2021 decidí reconvertirme en programador, porque quiero participar en el mundo del LegalTech, pero también en otros proyectos."
+    },
+    "experience":{
+      "3job":"Ingeniero de Software",
+      "3date":"Marzo 2022 - Actualmente",
+      "3description":"Desde marzo de 2022 hasta la fecha trabajo en Total Abogados, una start up legal que desarrolla su propia tecnología. He estado principalmente a las tareas de automatizar documentos legales, presentaciones judiciales y de crear herramientas para que los usuarios puedan generar documentación legal de manera confiable y segura. También he desarrollado pequeñas funcionalidades para conseguir la experiencia más completa en la generación de documentos, incluyendo aquellos que realizan cálculos.",
+      "second-job-title":"Desarrollador Back-End",
+      "second-job-dates":"Enero 1995 - Enero - 2000",
+      "second-job-description":"Bla bla bla bla bla bla",
+      "last-job-title":"Desarrollador Back-End",
+      "last-job-dates":"Enero 1995 - Enero - 2000",
+      "last-job-description":"Bla bla bla bla bla bla"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "profile":{
+      "name":"Rafael Montaner's Profile",
+      "rol":"Developer | Attorney",
+      "description":"I am a novice developer with knowledge of technologies such as Java, Python, HTML, CSS, JS, SQL, Mongo DB, and in constant study. I am learning REACT and also studying the implementation of AI in applications. I am a lawyer, but in 2021, I decided to switch careers and become a programmer because I want to participate in the world of LegalTech and other projects as well."
+  },
+    "experience":{
+      "3job":"Software Engineer",
+      "3date":"March 2022 - Current",
+      "3description":"Since March 2022, I have been working at Total Abogados, a legal start-up that develops its own technology. I have been primarily involved in automating legal documents, court presentations, and creating tools to enable users to generate legal documentation reliably and securely. I have also developed small features to enhance the overall experience in document generation, including those involving calculations.",
+      "second-job-title":"Desarrollador Back-End",
+      "second-job-dates":"Enero 1995 - Enero - 2000",
+      "second-job-description":"Bla bla bla bla bla bla",
+      "last-job-title":"Desarrollador Back-End",
+      "last-job-dates":"Enero 1995 - Enero - 2000",
+      "last-job-description":"Bla bla bla bla bla bla"
+  }
+}
