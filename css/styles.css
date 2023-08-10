@@ -165,7 +165,7 @@ body.dark {
 }
 
 .card__title {
-    margin: 0;
+    margin: 0.5em;
     margin-bottom: 1em;
     font-size: 1.2rem;
 }
@@ -311,15 +311,25 @@ body.dark {
     display: flex;
     justify-content: space-between;
     margin: 0.5em 0;
-    font-size: 0.6rem;
     width: 275px;
-    
+    margin-right: 10px;
+}
+
+.project__tag {
+    padding: 0.4em 0.8em;
+    margin: 0 5px;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    transition: var(--transition);
 }
 
 @media screen and (min-width: 760px) {
     .project__tags {
         width: 325px;
-        font-size: 0.8rem;
+        font-size: 0.6rem;
+        margin-right: 10px;
+        overflow-x: initial;
     }
 }
 
