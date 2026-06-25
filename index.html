@@ -3,388 +3,386 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rafael Montaner - Legal Engineer & Legal Tech Consultant | Bridging Law and Technology">
-    <title>Rafael Montaner | Legal Engineer & Legal Tech Consultant</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Rafael Montaner | Legal Engineer & Tech Consultant</title>
+    <meta name="description" content="Portfolio of Rafael Montaner, Legal Engineer and Lawyer specializing in RAG, AI Governance, and Legal Operations.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #050505;
+            --bg-secondary: #0a0a0a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent: #00d2ff;
+            --accent-2: #3b82f6;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Subtle grid background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+        h1, h2, h3, h4 { font-family: var(--font-heading); color: var(--text-primary); }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(5, 5, 5, 0.8); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--text-primary); text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .btn-nav {
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            color: #000 !important; padding: 0.5rem 1.2rem; border-radius: 8px;
+            font-weight: 600 !important;
+        }
+
+        /* Hero */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; }
+        .hero-greeting { font-size: 1.2rem; color: var(--accent); font-weight: 500; margin-bottom: 0.5rem; }
+        .hero-name { font-size: 4rem; font-weight: 700; line-height: 1.1; margin-bottom: 1rem; }
+        .hero-title { font-size: 1.8rem; color: var(--text-primary); font-family: var(--font-heading); margin-bottom: 1.5rem; min-height: 2.5rem; }
+        .typing-text { color: var(--accent); }
+        .cursor { color: var(--accent); animation: blink 1s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        .hero-desc { font-size: 1.1rem; max-width: 600px; margin-bottom: 2rem; }
+        .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn {
+            padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;
+            display: inline-flex; align-items: center; gap: 0.5rem; transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn-primary { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #000; }
+        .btn-secondary { border: 1px solid var(--glass-border); color: var(--text-primary); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,210,255,0.2); }
+
+        /* Sections */
+        .section { padding: 6rem 0; }
+        .bg-alt { background: var(--bg-secondary); }
+        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 3rem; }
+
+        /* About */
+        .about-text p { margin-bottom: 1rem; font-size: 1.05rem; }
+        .badges { display: flex; gap: 1rem; margin: 1.5rem 0; flex-wrap: wrap; }
+        .badge {
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; color: var(--text-primary);
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .languages { margin-top: 2rem; }
+        .languages h4 { margin-bottom: 0.5rem; color: var(--accent); }
+        .lang-list { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+        /* Experience Cards */
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .glass-card {
+            background: var(--glass-bg); backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border); border-radius: 16px;
+            padding: 2rem; transition: transform 0.3s, border-color 0.3s;
+        }
+        .glass-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem; }
+        .card-header h3 { font-size: 1.3rem; }
+        .date { font-size: 0.85rem; color: var(--accent); font-weight: 500; }
+        .role { font-size: 0.95rem; color: var(--text-primary); margin-bottom: 1rem; font-weight: 500; }
+        .glass-card ul { list-style: none; padding: 0; }
+        .glass-card li { margin-bottom: 0.8rem; font-size: 0.95rem; position: relative; padding-left: 1.2rem; }
+        .glass-card li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
+
+        /* Stack */
+        .stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        .stack-category h4 { color: var(--accent); margin-bottom: 1rem; font-size: 1.1rem; }
+        .tech-badges { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+        .tech-badge {
+            background: rgba(0, 210, 255, 0.05); border: 1px solid rgba(0, 210, 255, 0.2);
+            padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.9rem; color: var(--text-primary);
+            transition: background 0.3s;
+        }
+        .tech-badge:hover { background: rgba(0, 210, 255, 0.15); }
+
+        /* Contact */
+        .contact-container { text-align: center; max-width: 800px; margin: 0 auto; }
+        .contact-desc { font-size: 1.1rem; margin-bottom: 2rem; }
+        .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+        .contact-card {
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            padding: 1rem 2rem; border-radius: 12px; text-decoration: none; color: var(--text-primary);
+            display: flex; align-items: center; gap: 0.8rem; transition: all 0.3s;
+        }
+        .contact-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+        .contact-card i { font-size: 1.5rem; color: var(--accent); }
+
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--glass-border); font-size: 0.9rem; }
+
+        /* Animations */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-name { font-size: 2.5rem; }
+            .hero-title { font-size: 1.2rem; }
+            .nav-links { gap: 1rem; font-size: 0.9rem; }
+            .section { padding: 4rem 0; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
+
+    <!-- Navbar -->
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <span class="logo">RM</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li>
-                    <button class="lang-toggle" id="langToggle">
-                        <i class="fas fa-globe"></i>
-                        <span id="currentLang">EN</span>
-                    </button>
-                </li>
+        <div class="container nav-container">
+            <a href="#" class="logo">RM<span class="gradient-text">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#contact" class="btn-nav">Contact</a></li>
             </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    <span class="greeting" data-lang-en="Hi, I'm" data-lang-es="Hola, soy">Hi, I'm</span>
-                    <span class="name">Rafael Montaner</span>
-                </h1>
-                <div class="typewriter">
-                    <span class="typewriter-text" id="typewriter"></span>
-                    <span class="cursor">|</span>
-                </div>
-                <p class="hero-description" data-lang-en="Legal Engineer & Legal Tech Consultant specializing in legal operations transformation, process automation, and RAG deployments. Bridging legal and technical teams through the full implementation cycle." data-lang-es="Ingeniero Legal y Consultor de Legal Tech especializado en transformación de operaciones legales, automatización de procesos y despliegues RAG. Conectando equipos legales y técnicos a través del ciclo completo de implementación.">
-                    Legal Engineer & Legal Tech Consultant specializing in legal operations transformation, process automation, and RAG deployments. Bridging legal and technical teams through the full implementation cycle.
-                </p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn btn-primary" data-lang-en="Get in Touch" data-lang-es="Contáctame">Get in Touch</a>
-                    <a href="https://github.com/gudaraz" target="_blank" class="btn btn-secondary">
-                        <i class="fab fa-github"></i>
-                        <span data-lang-en="View GitHub" data-lang-es="Ver GitHub">View GitHub</span>
-                    </a>
-                </div>
-                <div class="hero-badges">
-                    <span class="badge">
-                        <i class="fas fa-passport"></i>
-                        <span data-lang-en="EU Citizen (Spain)" data-lang-es="Ciudadano UE (España)">EU Citizen (Spain)</span>
-                    </span>
-                    <span class="badge">
-                        <i class="fas fa-plane"></i>
-                        <span data-lang-en="Available for Relocation" data-lang-es="Disponible para Reubicación">Available for Relocation</span>
-                    </span>
-                </div>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <p class="hero-greeting fade-in">Hello, I'm</p>
+            <h1 class="hero-name fade-in">Rafael Montaner <span class="gradient-text">Robles</span></h1>
+            <div class="hero-title fade-in">
+                <span>I build </span>
+                <span class="typing-text" id="typing-text"></span>
+                <span class="cursor">|</span>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+            <p class="hero-desc fade-in">Bridging Law and Technology to design intelligent workflows, RAG architectures, and AI governance frameworks for the European market.</p>
+            <div class="hero-actions fade-in">
+                <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get in Touch</a>
+                <a href="https://www.linkedin.com/in/rafaelmontaner" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title" data-lang-en="About Me" data-lang-es="Sobre Mí">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p data-lang-en="I am a Licensed Attorney and Software Developer specializing in legal operations transformation, process automation, and legal technology implementation. Currently working as an Independent Legal Operations & Legal Tech Consultant in Europe." data-lang-es="Soy Abogado Licenciado y Desarrollador de Software especializado en transformación de operaciones legales, automatización de procesos e implementación de tecnología legal. Actualmente trabajo como Consultor Independiente de Operaciones Legales y Legal Tech en Europa.">
-                        I am a Licensed Attorney and Software Developer specializing in legal operations transformation, process automation, and legal technology implementation. Currently working as an Independent Legal Operations & Legal Tech Consultant in Europe.
-                    </p>
-                    <p data-lang-en="I design and build systems—from workflow architecture and automated document generation to proprietary RAG deployments—bridging legal and technical teams through the full implementation cycle: intake, development, testing, sign-off, and production." data-lang-es="Diseño y construyo sistemas, desde arquitectura de flujos de trabajo y generación automatizada de documentos hasta despliegues RAG propietarios, conectando equipos legales y técnicos a través del ciclo completo de implementación.">
-                        I design and build systems—from workflow architecture and automated document generation to proprietary RAG deployments—bridging legal and technical teams through the full implementation cycle: intake, development, testing, sign-off, and production.
-                    </p>
-                    
-                    <div class="languages">
-                        <h3 data-lang-en="Languages" data-lang-es="Idiomas">Languages</h3>
-                        <div class="language-grid">
-                            <div class="language-item">
-                                <span class="lang-name" data-lang-en="Spanish" data-lang-es="Español">Spanish</span>
-                                <span class="lang-level">Native</span>
-                            </div>
-                            <div class="language-item">
-                                <span class="lang-name" data-lang-en="English" data-lang-es="Inglés">English</span>
-                                <span class="lang-level">C1</span>
-                            </div>
-                            <div class="language-item">
-                                <span class="lang-name" data-lang-en="Russian" data-lang-es="Ruso">Russian</span>
-                                <span class="lang-level">B2</span>
-                            </div>
-                        </div>
+            <h2 class="section-title fade-in">About <span class="gradient-text">Me</span></h2>
+            <div class="about-text fade-in">
+                <p>I am a <strong>Licensed Attorney and Software Developer</strong> specializing in legal operations transformation and process automation. Currently working as an <strong>Independent Legal Tech Consultant in Europe</strong>, I design and build systems—from workflow architecture to proprietary RAG deployments—bridging legal and technical teams.</p>
+                <p>My focus is on building holistic business processes that embed legal functions into the broader organization, ensuring strict adherence to <strong>GDPR</strong> and the <strong>EU AI Act</strong>.</p>
+                <div class="badges">
+                    <span class="badge"><i class="fas fa-passport"></i> EU Citizen (Spain)</span>
+                    <span class="badge"><i class="fas fa-globe"></i> Open to Relocation</span>
+                </div>
+                <div class="languages">
+                    <h4>Languages</h4>
+                    <div class="lang-list">
+                        <span>🇪🇸 Spanish (Native)</span>
+                        <span>🇬🇧 English (C1)</span>
+                        <span>🇷🇺 Russian (B2)</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Milestones Section -->
-    <section class="section section-alt">
+    <!-- Experience -->
+    <section id="experience" class="section bg-alt">
         <div class="container">
-            <h2 class="section-title" data-lang-en="Key Milestones & Impact" data-lang-es="Hitos Clave e Impacto">Key Milestones & Impact</h2>
-            <div class="milestones-grid">
-                <div class="milestone-card">
-                    <div class="milestone-icon">
-                        <i class="fas fa-trophy"></i>
+            <h2 class="section-title fade-in">Key <span class="gradient-text">Milestones</span></h2>
+            <div class="cards-grid">
+                <div class="glass-card fade-in">
+                    <div class="card-header">
+                        <h3>Independent Consultant</h3>
+                        <span class="date">Oct 2025 – Present</span>
                     </div>
-                    <h3 data-lang-en="Award-Winning Innovation" data-lang-es="Innovación Premiada">Award-Winning Innovation</h3>
-                    <p data-lang-en="Designed and developed Younomad, winning the 2025 Concurso de Innovación Jurídica in Madrid (€10,000 seed capital)." data-lang-es="Diseñé y desarrollé Younomad, ganando el Concurso de Innovación Jurídica 2025 en Madrid (€10,000 capital semilla).">
-                        Designed and developed Younomad, winning the 2025 Concurso de Innovación Jurídica in Madrid (€10,000 seed capital).
-                    </p>
+                    <p class="role">Legal Operations & Tech Consultant (Europe)</p>
+                    <ul>
+                        <li>Designed full RAG-based compliance knowledge assistants for global FMCG corporations.</li>
+                        <li>Advising on <strong>EU AI Act</strong> risk classification and <strong>GDPR</strong> privacy-by-design architectures.</li>
+                        <li>Translating complex legal requirements into engineering specs (BPMN, API blueprints).</li>
+                    </ul>
                 </div>
-                <div class="milestone-card">
-                    <div class="milestone-icon">
-                        <i class="fas fa-bolt"></i>
+
+                <div class="glass-card fade-in">
+                    <div class="card-header">
+                        <h3>WOW Legal Experience</h3>
+                        <span class="date">Oct 2023 – Oct 2025</span>
                     </div>
-                    <h3 data-lang-en="80% Efficiency Boost" data-lang-es="80% de Mejora en Eficiencia">80% Efficiency Boost</h3>
-                    <p data-lang-en="Reduced intestate succession processing time from 60 to 15 minutes per case through workflow redesign and automation." data-lang-es="Reduje el tiempo de procesamiento de sucesiones intestadas de 60 a 15 minutos por caso mediante rediseño de flujos y automatización.">
-                        Reduced intestate succession processing time from 60 to 15 minutes per case through workflow redesign and automation.
-                    </p>
+                    <p class="role">Legal Engineer</p>
+                    <ul>
+                        <li>🏆 <strong>Award-Winning:</strong> Developed <em>Younomad</em>, winning the 2025 Legal Innovation Award (€10k seed capital) in Madrid.</li>
+                        <li>Built <em>Couple Council</em> and SaaS platforms integrating document automation and CLM workflows.</li>
+                        <li>Represented the company at international legal tech forums across Europe and LATAM.</li>
+                    </ul>
                 </div>
-                <div class="milestone-card">
-                    <div class="milestone-icon">
-                        <i class="fas fa-brain"></i>
+
+                <div class="glass-card fade-in">
+                    <div class="card-header">
+                        <h3>Total Abogados</h3>
+                        <span class="date">Mar 2022 – Aug 2023</span>
                     </div>
-                    <h3 data-lang-en="Enterprise AI & RAG" data-lang-es="IA Empresarial y RAG">Enterprise AI & RAG</h3>
-                    <p data-lang-en="Developed RAG-based compliance knowledge assistants ensuring GDPR and EU AI Act compliance for global corporations." data-lang-es="Desarrollé asistentes de conocimiento de cumplimiento basados en RAG asegurando conformidad con GDPR y EU AI Act para corporaciones globales.">
-                        Developed RAG-based compliance knowledge assistants ensuring GDPR and EU AI Act compliance for global corporations.
-                    </p>
-                </div>
-                <div class="milestone-card">
-                    <div class="milestone-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3 data-lang-en="CLM Development" data-lang-es="Desarrollo de CLM">CLM Development</h3>
-                    <p data-lang-en="Co-developed TAPP Legal, a B2B Contract Lifecycle Management platform enabling enterprise HR departments to manage contracts independently." data-lang-es="Co-desarrollé TAPP Legal, una plataforma de Gestión del Ciclo de Vida de Contratos B2B que permite a departamentos de RRHH empresariales gestionar contratos independientemente.">
-                        Co-developed TAPP Legal, a B2B Contract Lifecycle Management platform enabling enterprise HR departments to manage contracts independently.
-                    </p>
+                    <p class="role">Legal Process Automation Lead</p>
+                    <ul>
+                        <li>⚡ <strong>80% Efficiency Boost:</strong> Cut intestate succession processing from 60 to 15 minutes via custom automation.</li>
+                        <li>Co-developed <em>TAPP Legal</em>, a B2B CLM platform for enterprise HR departments.</li>
+                        <li>Achieved 100% digital adoption in internal debt collection workflows.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
+    <!-- Stack -->
+    <section id="stack" class="section">
         <div class="container">
-            <h2 class="section-title" data-lang-en="Professional Experience" data-lang-es="Experiencia Profesional">Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 data-lang-en="Legal Operations & Legal Tech Consultant" data-lang-es="Consultor de Operaciones Legales y Legal Tech">Legal Operations & Legal Tech Consultant</h3>
-                            <span class="timeline-company">Independent — Remote (Europe)</span>
-                            <span class="timeline-date">October 2025 – Present</span>
-                        </div>
-                        <ul class="timeline-list">
-                            <li data-lang-en="Developed full implementation design for RAG-based compliance knowledge assistant for global FMCG corporation" data-lang-es="Desarrollé diseño de implementación completa para asistente de conocimiento de cumplimiento basado en RAG para corporación global de FMCG">Developed full implementation design for RAG-based compliance knowledge assistant for global FMCG corporation</li>
-                            <li data-lang-en="Designed and deployed proprietary RAG architectures on client infrastructure with full data sovereignty" data-lang-es="Diseñé y desplegué arquitecturas RAG propietarias en infraestructura del cliente con soberanía de datos completa">Designed and deployed proprietary RAG architectures on client infrastructure with full data sovereignty</li>
-                            <li data-lang-en="Advised on AI governance including EU AI Act risk classification and GDPR operational requirements" data-lang-es="Asesoré en gobernanza de IA incluyendo clasificación de riesgo EU AI Act y requisitos operativos de GDPR">Advised on AI governance including EU AI Act risk classification and GDPR operational requirements</li>
-                            <li data-lang-en="Translated legal requirements into engineering specifications (BPMN diagrams, IF/THEN logic, API blueprints)" data-lang-es="Traduje requisitos legales en especificaciones de ingeniería (diagramas BPMN, lógica IF/THEN, planos de API)">Translated legal requirements into engineering specifications (BPMN diagrams, IF/THEN logic, API blueprints)</li>
-                        </ul>
+            <h2 class="section-title fade-in">Tech <span class="gradient-text">Stack</span></h2>
+            <div class="stack-grid fade-in">
+                <div class="stack-category">
+                    <h4>Backend & AI</h4>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Django</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Java</span>
+                        <span class="tech-badge">RAG / LLMs</span>
                     </div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 data-lang-en="Legal Engineer" data-lang-es="Ingeniero Legal">Legal Engineer</h3>
-                            <span class="timeline-company">Wow Legal Experience — Chile/Spain</span>
-                            <span class="timeline-date">October 2023 – October 2025</span>
-                        </div>
-                        <ul class="timeline-list">
-                            <li data-lang-en="Designed and developed Younomad, winner of 2025 Concurso de Innovación Jurídica (€10,000 seed capital)" data-lang-es="Diseñé y desarrollé Younomad, ganador del Concurso de Innovación Jurídica 2025 (€10,000 capital semilla)">Designed and developed Younomad, winner of 2025 Concurso de Innovación Jurídica (€10,000 seed capital)</li>
-                            <li data-lang-en="Built Couple Council platform for Spanish family law with document automation and client-facing workflows" data-lang-es="Construí plataforma Couple Council para derecho familiar español con automatización de documentos y flujos orientados al cliente">Built Couple Council platform for Spanish family law with document automation and client-facing workflows</li>
-                            <li data-lang-en="Collaborated on SaaS platform for Peruvian law firm enabling online board meetings with integrated collaboration" data-lang-es="Colaboré en plataforma SaaS para firma legal peruana habilitando reuniones de directorio online con colaboración integrada">Collaborated on SaaS platform for Peruvian law firm enabling online board meetings with integrated collaboration</li>
-                            <li data-lang-en="Built full-stack legal applications using React and Node.js, deployed across Chile, Argentina, and Spain" data-lang-es="Construí aplicaciones legales full-stack usando React y Node.js, desplegadas en Chile, Argentina y España">Built full-stack legal applications using React and Node.js, deployed across Chile, Argentina, and Spain</li>
-                        </ul>
+                <div class="stack-category">
+                    <h4>Frontend</h4>
+                    <div class="tech-badges">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">HTML5 / CSS3</span>
+                        <span class="tech-badge">Bootstrap</span>
                     </div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3 data-lang-en="Legal Process Automation & Technology Lead" data-lang-es="Líder de Automatización de Procesos Legales y Tecnología">Legal Process Automation & Technology Lead</h3>
-                            <span class="timeline-company">Total Abogados — Santiago, Chile</span>
-                            <span class="timeline-date">March 2022 – August 2023</span>
-                        </div>
-                        <ul class="timeline-list">
-                            <li data-lang-en="Reduced intestate succession processing time by 80% (60 to 15 minutes per case)" data-lang-es="Reduje el tiempo de procesamiento de sucesiones intestadas en un 80% (60 a 15 minutos por caso)">Reduced intestate succession processing time by 80% (60 to 15 minutes per case)</li>
-                            <li data-lang-en="Automated full legal document production including court submissions, deeds, and appeals" data-lang-es="Automaticé la producción completa de documentos legales incluyendo presentaciones judiciales, escrituras y apelaciones">Automated full legal document production including court submissions, deeds, and appeals</li>
-                            <li data-lang-en="Co-developed TAPP Legal, a B2B CLM platform for employment contract management" data-lang-es="Co-desarrollé TAPP Legal, una plataforma CLM B2B para gestión de contratos laborales">Co-developed TAPP Legal, a B2B CLM platform for employment contract management</li>
-                            <li data-lang-en="Automated debt collection workflow achieving 100% digital adoption" data-lang-es="Automaticé el flujo de cobro de deudas logrando 100% de adopción digital">Automated debt collection workflow achieving 100% digital adoption</li>
-                        </ul>
+                <div class="stack-category">
+                    <h4>Database & Cloud</h4>
+                    <div class="tech-badges">
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">MongoDB</span>
+                        <span class="tech-badge">SQL</span>
+                        <span class="tech-badge">AWS</span>
+                    </div>
+                </div>
+                <div class="stack-category">
+                    <h4>Tools & Ops</h4>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Git</span>
+                        <span class="tech-badge">Agile / Scrum</span>
+                        <span class="tech-badge">BPMN</span>
+                        <span class="tech-badge">Jira</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tech Stack Section -->
-    <section class="section section-alt">
-        <div class="container">
-            <h2 class="section-title" data-lang-en="Tech Stack" data-lang-es="Stack Tecnológico">Tech Stack</h2>
-            <div class="tech-grid">
-                <div class="tech-category">
-                    <h3><i class="fas fa-code"></i> <span data-lang-en="Languages" data-lang-es="Lenguajes">Languages</span></h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Java</span>
-                        <span class="tech-tag">SQL</span>
-                    </div>
-                </div>
-                <div class="tech-category">
-                    <h3><i class="fas fa-layer-group"></i> <span data-lang-en="Frameworks & Libraries" data-lang-es="Frameworks y Librerías">Frameworks & Libraries</span></h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Django</span>
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Express</span>
-                    </div>
-                </div>
-                <div class="tech-category">
-                    <h3><i class="fas fa-database"></i> <span data-lang-en="Databases" data-lang-es="Bases de Datos">Databases</span></h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">PostgreSQL</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                </div>
-                <div class="tech-category">
-                    <h3><i class="fas fa-cloud"></i> <span data-lang-en="Cloud & DevOps" data-lang-es="Nube y DevOps">Cloud & DevOps</span></h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">AWS</span>
-                        <span class="tech-tag">Git</span>
-                        <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">CI/CD</span>
-                    </div>
-                </div>
-                <div class="tech-category">
-                    <h3><i class="fas fa-brain"></i> <span data-lang-en="AI & Legal Tech" data-lang-es="IA y Legal Tech">AI & Legal Tech</span></h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">RAG</span>
-                        <span class="tech-tag">LLMs</span>
-                        <span class="tech-tag">CLM Systems</span>
-                        <span class="tech-tag">Document Automation</span>
-                    </div>
-                </div>
-                <div class="tech-category">
-                    <h3><i class="fas fa-tasks"></i> <span data-lang-en="Methodologies" data-lang-es="Metodologías">Methodologies</span></h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Agile/Scrum</span>
-                        <span class="tech-tag">BPMN</span>
-                        <span class="tech-tag">Legal Project Management</span>
-                        <span class="tech-tag">Privacy-by-Design</span>
-                    </div>
-                </div>
+    <!-- Contact -->
+    <section id="contact" class="section bg-alt">
+        <div class="container contact-container">
+            <h2 class="section-title fade-in">Let's <span class="gradient-text">Connect</span></h2>
+            <p class="contact-desc fade-in">I'm currently open to new opportunities across Europe (Targeting Germany, Sweden, Finland). Whether you have a question, a project, or just want to say hi, my inbox is always open!</p>
+            <div class="contact-links fade-in">
+                <a href="mailto:rafael.montaner@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <span>rafael.montaner@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/rafaelmontaner" target="_blank" class="contact-card">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://www.rafaelmontaner.com" target="_blank" class="contact-card">
+                    <i class="fas fa-globe"></i>
+                    <span>Website</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title" data-lang-en="Featured Projects" data-lang-es="Proyectos Destacados">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-plane-departure"></i>
-                    </div>
-                    <h3>Younomad</h3>
-                    <p data-lang-en="Legal settlement platform for digital nomads in Spain. Winner of 2025 Concurso de Innovación Jurídica (€10,000 seed capital)." data-lang-es="Plataforma de asentamiento legal para nómadas digitales en España. Ganador del Concurso de Innovación Jurídica 2025 (€10,000 capital semilla).">
-                        Legal settlement platform for digital nomads in Spain. Winner of 2025 Concurso de Innovación Jurídica (€10,000 seed capital).
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Legal Tech</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Couple Council</h3>
-                    <p data-lang-en="Platform guiding couples through Spanish family law with document automation and client-facing workflows." data-lang-es="Plataforma que guía a parejas a través del derecho familiar español con automatización de documentos y flujos orientados al cliente.">
-                        Platform guiding couples through Spanish family law with document automation and client-facing workflows.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Document Automation</span>
-                        <span class="tag">Family Law</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-file-signature"></i>
-                    </div>
-                    <h3>TAPP Legal</h3>
-                    <p data-lang-en="B2B Contract Lifecycle Management platform enabling enterprise HR departments to manage employment contracts independently." data-lang-es="Plataforma de Gestión del Ciclo de Vida de Contratos B2B que permite a departamentos de RRHH empresariales gestionar contratos laborales independientemente.">
-                        B2B Contract Lifecycle Management platform enabling enterprise HR departments to manage employment contracts independently.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">CLM</span>
-                        <span class="tag">B2B</span>
-                        <span class="tag">HR Tech</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>RAG Compliance Assistant</h3>
-                    <p data-lang-en="Enterprise RAG-based compliance knowledge assistant with GDPR and EU AI Act compliance for global corporations." data-lang-es="Asistente de conocimiento de cumplimiento empresarial basado en RAG con conformidad GDPR y EU AI Act para corporaciones globales.">
-                        Enterprise RAG-based compliance knowledge assistant with GDPR and EU AI Act compliance for global corporations.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">RAG</span>
-                        <span class="tag">AI</span>
-                        <span class="tag">GDPR</span>
-                        <span class="tag">EU AI Act</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title" data-lang-en="Get in Touch" data-lang-es="Contáctame">Get in Touch</h2>
-            <div class="contact-content">
-                <p class="contact-intro" data-lang-en="I'm currently available for consulting opportunities and legal technology projects across Europe. Let's build something amazing together!" data-lang-es="Actualmente estoy disponible para oportunidades de consultoría y proyectos de tecnología legal en toda Europa. ¡Construyamos algo increíble juntos!">
-                    I'm currently available for consulting opportunities and legal technology projects across Europe. Let's build something amazing together!
-                </p>
-                <div class="contact-links">
-                    <a href="mailto:rafael.montaner@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        <span>rafael.montaner@gmail.com</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/rafaelmontaner" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/gudaraz" target="_blank" class="contact-link">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://www.rafaelmontaner.com" target="_blank" class="contact-link">
-                        <i class="fas fa-globe"></i>
-                        <span data-lang-en="Website" data-lang-es="Sitio Web">Website</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Rafael Montaner. <span data-lang-en="All rights reserved." data-lang-es="Todos los derechos reservados.">All rights reserved.</span></p>
-        </div>
+    <footer>
+        <p>Designed & Built by Rafael Montaner <span class="gradient-text">© 2026</span></p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // Typing Effect
+        const phrases = [
+            "Intelligent Legal Workflows.",
+            "RAG & AI Governance Systems.",
+            "Full-Stack Python Applications.",
+            "Scalable Legal Operations."
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.getElementById('typing-text');
+
+        function type() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000; // Pause at end
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500; // Pause before next phrase
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+        type();
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
