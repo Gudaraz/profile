@@ -20,10 +20,10 @@ function updateLanguage() {
 
 // Typewriter Effect
 const phrases = [
-    { en: 'Legal Operations & Legal Tech Consultant', es: 'Consultor de Operaciones Legales y Legal Tech' },
+    { en: 'Legal Engineer & Legal Tech Consultant', es: 'Ingeniero Legal y Consultor de Legal Tech' },
     { en: 'Building Intelligent Legal Workflows', es: 'Construyendo Flujos de Trabajo Legales Inteligentes' },
     { en: 'RAG & AI Governance Specialist', es: 'Especialista en RAG y Gobernanza de IA' },
-    { en: 'EU AI Act & GDPR Compliance Expert', es: 'Experto en Conformidad EU AI Act y GDPR' }
+    { en: 'Bridging Law and Technology', es: 'Conectando Derecho y Tecnología' }
 ];
 
 let phraseIndex = 0;
@@ -100,31 +100,56 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Intersection Observer for Fade-in Animations
+// Intersection Observer for Reveal Animations
 const observerOptions = {
-    threshold: 0.1,
+    threshold: 0.15,
     rootMargin: '0px 0px -100px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+            entry.target.classList.add('active');
         }
     });
 }, observerOptions);
 
-// Observe all cards and sections
-document.querySelectorAll('.milestone-card, .timeline-item, .project-card, .tech-category').forEach(el => {
-    el.style.opacity = '0';
+// Observe all elements with reveal classes
+document.querySelectorAll('.reveal-left, .reveal-up').forEach(el => {
     observer.observe(el);
+});
+
+// Staggered animation for grid items
+const staggerObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add('active');
+            }, index * 100);
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.approach-card, .milestone-card, .tech-category, .project-card').forEach(el => {
+    el.classList.add('reveal-up');
+    staggerObserver.observe(el);
 });
 
 // Update language when typewriter changes
 const originalUpdateLanguage = updateLanguage;
 updateLanguage = function() {
     originalUpdateLanguage();
-    // Reset typewriter when language changes
     charIndex = 0;
     typewriterElement.textContent = '';
 };
+
+// Parallax effect for gradient orbs
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const orbs = document.querySelectorAll('.gradient-orb');
+    
+    orbs.forEach((orb, index) => {
+        const speed = (index + 1) * 0.5;
+        orb.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+});
