@@ -1,246 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css" />
-    <title>Rafael Montaner</title>
-    <link rel="icon" type="images/x-icon" href="assets/images/rafalogo.png" />
-  </head>
-  <body class="dark">
-    <header class="header">
-      <div class="switches">
-        <div id="toggle-theme" class="toggle-theme">
-          <img 
-            id="toggle-icon" 
-            src="assets/icons/moon.png" 
-            alt="icon theme"
-            class="toggle-theme__icon"
-          />
-          <p id="toggle-text" class="toggle-theme__text">
-            Dark Mode
-          </p>
-        </div>
-      </div>
-      <div id="flags" class="flags">
-        <div class="flags__item" data-language="es">
-          <img src="assets/icons/es.svg" alt="" class="flags__img">
-        </div>
-        <div class="flags__item" data-language="en">
-          <img src="assets/icons/gb.svg" alt="" class="flags__img">
-        </div>
-        <div class="flags__item" data-language="ru">
-          <img src="assets/icons/ru.svg" alt="" class="flags__img">
-        </div>
-      </div>
-      <div id="toggle-colors" class="colors">
-        <div data-color="hsl(214, 84%, 56%)" class="colors__item colors__item--blue"></div>
-        <div data-color="hsl(150, 84%, 56%)" class="colors__item colors__item--green"></div>
-        <div data-color="hsl(276, 84%, 56%)" class="colors__item colors__item--purple"></div>
-        <div data-color="hsl(46, 84%, 56%)" class="colors__item colors__item--orange"></div>
-      </div>
-    </header>
-    <main class="main">
-      <section class="column column--left">
-        <article class="card card--profile">
-        <div class="card__image-container">
-          <img src="assets/images/IMG_4658.jpeg" alt="">
-        </div>
-        <div class="card__header">
-          <h2 class="card__title"data-section="profile" data-value="name">Rafael Montaner's Profile</h2>
-          <p class="card_subtitle" data-section="profile" data-value="rol">Desarrollador de Software || Abogado</p>
-        </div>
-        <div class="card__body">
-          <div class="card__link">
-            <i class="fas fa-envelope icon"></i>
-            <a href="mailto:rafael.montaner@gmail.com">email@me</a>
-          </div>
-          <div class="card__body">
-            <div class="card__link">
-              <i class="fas fa-phone-alt icon"></i>
-              <a href="tel:+56945360692">Call Me</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rafael Montaner - Legal Engineer & Legal Tech Consultant | Bridging Law and Technology">
+    <title>Rafael Montaner | Legal Engineer & Legal Tech Consultant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo">RM</span>
             </div>
-            <p class="card__text" data-section="profile" data-value="description">
-              Soy un novell desarrollador con conocimiento de tecnologías como Java, Pyhton, HTML, CSS, JS, SQL, Mongo DB, y en constante estudio. Estoy aprendiendo REACT, y además estudiando la implementación de IA en aplicaciones. Soy abogado, pero en 2021 decidí reconvertirme en programador, porque quiero participar en el mundo del LegalTech, pero también en otros proyectos.
-            </p>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="lang-toggle" id="langToggle">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">EN</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-      </article>
-      <article class="card card--experience">
-        <h2 class="card__title">Experience</h2>
-        <div class="experience">
-          <img src="assets/images/rafalogo.png" alt="" class="experience__image">
-          <div class="experience__info">
-            <p class="experience__time"data-section="experience" data-value="3date">
-              Mar 2022 - Current
-            </p>
-            <h3 class="experience__job"data-section="experience" data-value="3job">
-              Software Engineer
-            </h3>
-            <p class="experience__description" data-section="experience" data-value="3description">
-              Desde marzo de 2022 hasta la fecha trabajo en Total Abogados, una start up legal que desarrolla su propia tecnología. He estado principalmente a las tareas de automatizar documentos legales, presentaciones judiciales y de crear herramientas para que los usuarios puedan generar documentación legal de manera confiable y segura. También he desarrollado pequeñas funcionalidades para conseguir la experiencia más completa en la generación de documentos, incluyendo aquellos que realizan cálculos.
-            </p>
-          </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="greeting" data-lang-en="Hi, I'm" data-lang-es="Hola, soy">Hi, I'm</span>
+                    <span class="name">Rafael Montaner</span>
+                </h1>
+                <div class="typewriter">
+                    <span class="typewriter-text" id="typewriter"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description" data-lang-en="Legal Engineer & Legal Tech Consultant specializing in legal operations transformation, process automation, and RAG deployments. Bridging legal and technical teams through the full implementation cycle." data-lang-es="Ingeniero Legal y Consultor de Legal Tech especializado en transformación de operaciones legales, automatización de procesos y despliegues RAG. Conectando equipos legales y técnicos a través del ciclo completo de implementación.">
+                    Legal Engineer & Legal Tech Consultant specializing in legal operations transformation, process automation, and RAG deployments. Bridging legal and technical teams through the full implementation cycle.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary" data-lang-en="Get in Touch" data-lang-es="Contáctame">Get in Touch</a>
+                    <a href="https://github.com/gudaraz" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i>
+                        <span data-lang-en="View GitHub" data-lang-es="Ver GitHub">View GitHub</span>
+                    </a>
+                </div>
+                <div class="hero-badges">
+                    <span class="badge">
+                        <i class="fas fa-passport"></i>
+                        <span data-lang-en="EU Citizen (Spain)" data-lang-es="Ciudadano UE (España)">EU Citizen (Spain)</span>
+                    </span>
+                    <span class="badge">
+                        <i class="fas fa-plane"></i>
+                        <span data-lang-en="Available for Relocation" data-lang-es="Disponible para Reubicación">Available for Relocation</span>
+                    </span>
+                </div>
+            </div>
         </div>
-        <div class="experience">
-          <img src="assets/images/rafalogo.png" alt="" class="experience__image">
-          <div class="experience__info">
-            <p class="experience__time">
-              Mar 2021 - Current
-            </p>
-            <h3 class="experience__job">
-              Developer
-            </h3>
-            <p class="experience__description"<p class="experience__description" data-section="experience" data-value="2description"></p>>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat expedita dignissimos maxime veniam repudiandae quos provident nam assumenda tenetur sint, delectus nulla et voluptatum minus ipsum itaque perspiciatis nemo magnam.
-            </p>
-          </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
         </div>
-        <div class="experience">
-          <img src="assets/images/rafalogo.png" alt="" class="experience__image">
-          <div class="experience__info">
-            <p class="experience__time">
-              Mar 2021 - Current
-            </p>
-            <h3 class="experience__job">
-              Developer
-            </h3>
-            <p class="experience__description" <p class="experience__description" data-section="experience" data-value="1description"></p>>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat expedita dignissimos maxime veniam repudiandae quos provident nam assumenda tenetur sint, delectus nulla et voluptatum minus ipsum itaque perspiciatis nemo magnam.
-            </p>
-          </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-lang-en="About Me" data-lang-es="Sobre Mí">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-lang-en="I am a Licensed Attorney and Software Developer specializing in legal operations transformation, process automation, and legal technology implementation. Currently working as an Independent Legal Operations & Legal Tech Consultant in Europe." data-lang-es="Soy Abogado Licenciado y Desarrollador de Software especializado en transformación de operaciones legales, automatización de procesos e implementación de tecnología legal. Actualmente trabajo como Consultor Independiente de Operaciones Legales y Legal Tech en Europa.">
+                        I am a Licensed Attorney and Software Developer specializing in legal operations transformation, process automation, and legal technology implementation. Currently working as an Independent Legal Operations & Legal Tech Consultant in Europe.
+                    </p>
+                    <p data-lang-en="I design and build systems—from workflow architecture and automated document generation to proprietary RAG deployments—bridging legal and technical teams through the full implementation cycle: intake, development, testing, sign-off, and production." data-lang-es="Diseño y construyo sistemas, desde arquitectura de flujos de trabajo y generación automatizada de documentos hasta despliegues RAG propietarios, conectando equipos legales y técnicos a través del ciclo completo de implementación.">
+                        I design and build systems—from workflow architecture and automated document generation to proprietary RAG deployments—bridging legal and technical teams through the full implementation cycle: intake, development, testing, sign-off, and production.
+                    </p>
+                    
+                    <div class="languages">
+                        <h3 data-lang-en="Languages" data-lang-es="Idiomas">Languages</h3>
+                        <div class="language-grid">
+                            <div class="language-item">
+                                <span class="lang-name" data-lang-en="Spanish" data-lang-es="Español">Spanish</span>
+                                <span class="lang-level">Native</span>
+                            </div>
+                            <div class="language-item">
+                                <span class="lang-name" data-lang-en="English" data-lang-es="Inglés">English</span>
+                                <span class="lang-level">C1</span>
+                            </div>
+                            <div class="language-item">
+                                <span class="lang-name" data-lang-en="Russian" data-lang-es="Ruso">Russian</span>
+                                <span class="lang-level">B2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </article>
-      <article class="card card--hobbies">
-        <h2 class="card__title">Hobbies</h2>
-        <div class="card__image-container">
-          <img src="assets/images/hobbie.jpg" alt="Man on a Bike">
+    </section>
+
+    <!-- Milestones Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title" data-lang-en="Key Milestones & Impact" data-lang-es="Hitos Clave e Impacto">Key Milestones & Impact</h2>
+            <div class="milestones-grid">
+                <div class="milestone-card">
+                    <div class="milestone-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 data-lang-en="Award-Winning Innovation" data-lang-es="Innovación Premiada">Award-Winning Innovation</h3>
+                    <p data-lang-en="Designed and developed Younomad, winning the 2025 Concurso de Innovación Jurídica in Madrid (€10,000 seed capital)." data-lang-es="Diseñé y desarrollé Younomad, ganando el Concurso de Innovación Jurídica 2025 en Madrid (€10,000 capital semilla).">
+                        Designed and developed Younomad, winning the 2025 Concurso de Innovación Jurídica in Madrid (€10,000 seed capital).
+                    </p>
+                </div>
+                <div class="milestone-card">
+                    <div class="milestone-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 data-lang-en="80% Efficiency Boost" data-lang-es="80% de Mejora en Eficiencia">80% Efficiency Boost</h3>
+                    <p data-lang-en="Reduced intestate succession processing time from 60 to 15 minutes per case through workflow redesign and automation." data-lang-es="Reduje el tiempo de procesamiento de sucesiones intestadas de 60 a 15 minutos por caso mediante rediseño de flujos y automatización.">
+                        Reduced intestate succession processing time from 60 to 15 minutes per case through workflow redesign and automation.
+                    </p>
+                </div>
+                <div class="milestone-card">
+                    <div class="milestone-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 data-lang-en="Enterprise AI & RAG" data-lang-es="IA Empresarial y RAG">Enterprise AI & RAG</h3>
+                    <p data-lang-en="Developed RAG-based compliance knowledge assistants ensuring GDPR and EU AI Act compliance for global corporations." data-lang-es="Desarrollé asistentes de conocimiento de cumplimiento basados en RAG asegurando conformidad con GDPR y EU AI Act para corporaciones globales.">
+                        Developed RAG-based compliance knowledge assistants ensuring GDPR and EU AI Act compliance for global corporations.
+                    </p>
+                </div>
+                <div class="milestone-card">
+                    <div class="milestone-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 data-lang-en="CLM Development" data-lang-es="Desarrollo de CLM">CLM Development</h3>
+                    <p data-lang-en="Co-developed TAPP Legal, a B2B Contract Lifecycle Management platform enabling enterprise HR departments to manage contracts independently." data-lang-es="Co-desarrollé TAPP Legal, una plataforma de Gestión del Ciclo de Vida de Contratos B2B que permite a departamentos de RRHH empresariales gestionar contratos independientemente.">
+                        Co-developed TAPP Legal, a B2B Contract Lifecycle Management platform enabling enterprise HR departments to manage contracts independently.
+                    </p>
+                </div>
+            </div>
         </div>
-        <h3 class="hobbie__title">Ciclismo</h3>
-        <p class="card__text">Una de las mejores formas que tengo para despejar y aclarar mi mente es salir a andar en bicicleta y disfrutar del viaje.</p>
-      </article>
-      </section>
-      <section class="column column--right">
-        <article class="card">
-          <h2 class="card__title">Front End</h2>
-          <small>Años de experiencia</small>
-          <div class="skills">
-          <div class="skills__header">
-            <span class="skills__start-level">0</span>
-            <span class="skills__start-level">5</span>
-          </div>
-          </div>
-          <div class="skills">
-            <div class="skills__item">
-              <p class="skills__tech">HTML</p>
-              <div class="skills__bar skills__bar--80">
-          </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title" data-lang-en="Professional Experience" data-lang-es="Experiencia Profesional">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-lang-en="Legal Operations & Legal Tech Consultant" data-lang-es="Consultor de Operaciones Legales y Legal Tech">Legal Operations & Legal Tech Consultant</h3>
+                            <span class="timeline-company">Independent — Remote (Europe)</span>
+                            <span class="timeline-date">October 2025 – Present</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li data-lang-en="Developed full implementation design for RAG-based compliance knowledge assistant for global FMCG corporation" data-lang-es="Desarrollé diseño de implementación completa para asistente de conocimiento de cumplimiento basado en RAG para corporación global de FMCG">Developed full implementation design for RAG-based compliance knowledge assistant for global FMCG corporation</li>
+                            <li data-lang-en="Designed and deployed proprietary RAG architectures on client infrastructure with full data sovereignty" data-lang-es="Diseñé y desplegué arquitecturas RAG propietarias en infraestructura del cliente con soberanía de datos completa">Designed and deployed proprietary RAG architectures on client infrastructure with full data sovereignty</li>
+                            <li data-lang-en="Advised on AI governance including EU AI Act risk classification and GDPR operational requirements" data-lang-es="Asesoré en gobernanza de IA incluyendo clasificación de riesgo EU AI Act y requisitos operativos de GDPR">Advised on AI governance including EU AI Act risk classification and GDPR operational requirements</li>
+                            <li data-lang-en="Translated legal requirements into engineering specifications (BPMN diagrams, IF/THEN logic, API blueprints)" data-lang-es="Traduje requisitos legales en especificaciones de ingeniería (diagramas BPMN, lógica IF/THEN, planos de API)">Translated legal requirements into engineering specifications (BPMN diagrams, IF/THEN logic, API blueprints)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-lang-en="Legal Engineer" data-lang-es="Ingeniero Legal">Legal Engineer</h3>
+                            <span class="timeline-company">Wow Legal Experience — Chile/Spain</span>
+                            <span class="timeline-date">October 2023 – October 2025</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li data-lang-en="Designed and developed Younomad, winner of 2025 Concurso de Innovación Jurídica (€10,000 seed capital)" data-lang-es="Diseñé y desarrollé Younomad, ganador del Concurso de Innovación Jurídica 2025 (€10,000 capital semilla)">Designed and developed Younomad, winner of 2025 Concurso de Innovación Jurídica (€10,000 seed capital)</li>
+                            <li data-lang-en="Built Couple Council platform for Spanish family law with document automation and client-facing workflows" data-lang-es="Construí plataforma Couple Council para derecho familiar español con automatización de documentos y flujos orientados al cliente">Built Couple Council platform for Spanish family law with document automation and client-facing workflows</li>
+                            <li data-lang-en="Collaborated on SaaS platform for Peruvian law firm enabling online board meetings with integrated collaboration" data-lang-es="Colaboré en plataforma SaaS para firma legal peruana habilitando reuniones de directorio online con colaboración integrada">Collaborated on SaaS platform for Peruvian law firm enabling online board meetings with integrated collaboration</li>
+                            <li data-lang-en="Built full-stack legal applications using React and Node.js, deployed across Chile, Argentina, and Spain" data-lang-es="Construí aplicaciones legales full-stack usando React y Node.js, desplegadas en Chile, Argentina y España">Built full-stack legal applications using React and Node.js, deployed across Chile, Argentina, and Spain</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3 data-lang-en="Legal Process Automation & Technology Lead" data-lang-es="Líder de Automatización de Procesos Legales y Tecnología">Legal Process Automation & Technology Lead</h3>
+                            <span class="timeline-company">Total Abogados — Santiago, Chile</span>
+                            <span class="timeline-date">March 2022 – August 2023</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li data-lang-en="Reduced intestate succession processing time by 80% (60 to 15 minutes per case)" data-lang-es="Reduje el tiempo de procesamiento de sucesiones intestadas en un 80% (60 a 15 minutos por caso)">Reduced intestate succession processing time by 80% (60 to 15 minutes per case)</li>
+                            <li data-lang-en="Automated full legal document production including court submissions, deeds, and appeals" data-lang-es="Automaticé la producción completa de documentos legales incluyendo presentaciones judiciales, escrituras y apelaciones">Automated full legal document production including court submissions, deeds, and appeals</li>
+                            <li data-lang-en="Co-developed TAPP Legal, a B2B CLM platform for employment contract management" data-lang-es="Co-desarrollé TAPP Legal, una plataforma CLM B2B para gestión de contratos laborales">Co-developed TAPP Legal, a B2B CLM platform for employment contract management</li>
+                            <li data-lang-en="Automated debt collection workflow achieving 100% digital adoption" data-lang-es="Automaticé el flujo de cobro de deudas logrando 100% de adopción digital">Automated debt collection workflow achieving 100% digital adoption</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          <div class="skills__item">
-            <p class="skills__tech">CSS</p>
-            <div class="skills__bar skills__bar--60">
-          </div>
-          </div>
-          <div class="skills__item">
-            <p class="skills__tech">JS</p>
-            <div class="skills__bar skills__bar--60">
-          </div>
-          </div>
-        </article>
-        <article class="card">
-          <h2 class="card__title">Back End</h2>
-          <small>Años de experiencia</small>
-          <div class="skills">
-          <div class="skills__header">
-            <span class="skills__start-level">0</span>
-            <span class="skills__start-level">5</span>
-          </div>
-          </div>
-          <div class="skills">
-            <div class="skills__item">
-              <p class="skills__tech">JAVA</p>
-              <div class="skills__bar skills__bar--60">
-          </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title" data-lang-en="Tech Stack" data-lang-es="Stack Tecnológico">Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3><i class="fas fa-code"></i> <span data-lang-en="Languages" data-lang-es="Lenguajes">Languages</span></h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">SQL</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3><i class="fas fa-layer-group"></i> <span data-lang-en="Frameworks & Libraries" data-lang-es="Frameworks y Librerías">Frameworks & Libraries</span></h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3><i class="fas fa-database"></i> <span data-lang-en="Databases" data-lang-es="Bases de Datos">Databases</span></h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3><i class="fas fa-cloud"></i> <span data-lang-en="Cloud & DevOps" data-lang-es="Nube y DevOps">Cloud & DevOps</span></h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">CI/CD</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3><i class="fas fa-brain"></i> <span data-lang-en="AI & Legal Tech" data-lang-es="IA y Legal Tech">AI & Legal Tech</span></h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">RAG</span>
+                        <span class="tech-tag">LLMs</span>
+                        <span class="tech-tag">CLM Systems</span>
+                        <span class="tech-tag">Document Automation</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3><i class="fas fa-tasks"></i> <span data-lang-en="Methodologies" data-lang-es="Metodologías">Methodologies</span></h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Agile/Scrum</span>
+                        <span class="tech-tag">BPMN</span>
+                        <span class="tech-tag">Legal Project Management</span>
+                        <span class="tech-tag">Privacy-by-Design</span>
+                    </div>
+                </div>
             </div>
-          <div class="skills__item">
-            <p class="skills__tech">PYTHON</p>
-            <div class="skills__bar skills__bar--10">
-          </div>
-          </div>
-          <div class="skills__item">
-            <p class="skills__tech">SQL</p>
-            <div class="skills__bar skills__bar--40">
-          </div>
-          </div>
-        </article>
-        <article class="card">
-          <h2 class="card__title">Languages</h2>
-          <small>Nivel</small>
-          <div class="skills">
-          <div class="skills__header">
-            <span class="skills__start-level">A1</span>
-            <span class="skills__start-level">C2</span>
-          </div>
-          </div>
-          <div class="skills">
-            <div class="skills__item">
-              <p class="skills__tech">SPANISH</p>
-              <div class="skills__bar skills__bar--100">
-          </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title" data-lang-en="Featured Projects" data-lang-es="Proyectos Destacados">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3>Younomad</h3>
+                    <p data-lang-en="Legal settlement platform for digital nomads in Spain. Winner of 2025 Concurso de Innovación Jurídica (€10,000 seed capital)." data-lang-es="Plataforma de asentamiento legal para nómadas digitales en España. Ganador del Concurso de Innovación Jurídica 2025 (€10,000 capital semilla).">
+                        Legal settlement platform for digital nomads in Spain. Winner of 2025 Concurso de Innovación Jurídica (€10,000 seed capital).
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">Legal Tech</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Couple Council</h3>
+                    <p data-lang-en="Platform guiding couples through Spanish family law with document automation and client-facing workflows." data-lang-es="Plataforma que guía a parejas a través del derecho familiar español con automatización de documentos y flujos orientados al cliente.">
+                        Platform guiding couples through Spanish family law with document automation and client-facing workflows.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Document Automation</span>
+                        <span class="tag">Family Law</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h3>TAPP Legal</h3>
+                    <p data-lang-en="B2B Contract Lifecycle Management platform enabling enterprise HR departments to manage employment contracts independently." data-lang-es="Plataforma de Gestión del Ciclo de Vida de Contratos B2B que permite a departamentos de RRHH empresariales gestionar contratos laborales independientemente.">
+                        B2B Contract Lifecycle Management platform enabling enterprise HR departments to manage employment contracts independently.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">CLM</span>
+                        <span class="tag">B2B</span>
+                        <span class="tag">HR Tech</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>RAG Compliance Assistant</h3>
+                    <p data-lang-en="Enterprise RAG-based compliance knowledge assistant with GDPR and EU AI Act compliance for global corporations." data-lang-es="Asistente de conocimiento de cumplimiento empresarial basado en RAG con conformidad GDPR y EU AI Act para corporaciones globales.">
+                        Enterprise RAG-based compliance knowledge assistant with GDPR and EU AI Act compliance for global corporations.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">RAG</span>
+                        <span class="tag">AI</span>
+                        <span class="tag">GDPR</span>
+                        <span class="tag">EU AI Act</span>
+                    </div>
+                </div>
             </div>
-          <div class="skills__item">
-            <p class="skills__tech">ENGLISH</p>
-            <div class="skills__bar skills__bar--90">
-          </div>
-          </div>
-          <div class="skills__item">
-            <p class="skills__tech">RUSSIAN</p>
-            <div class="skills__bar skills__bar--50">
-          </div>
-          </div>
-        </article>
-        <article class="card card--project">
-          <div class="card__image-container">
-            <img src="assets/images/tapplegal.png" alt="Landing Page" class="card__image">
-          </div>
-          <div class="project">
-            <div class="project__tags">
-              <span class="project__tag">#HTML</span>
-              <span class="project__tag">#CSS</span>
-              <span class="project__tag">#JS</span>
-              <span class="project__tag">#ANGULAR</span>
-              <span class="project__tag">#MONGO</span>
-              <span class="project__tag">#EJS</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title" data-lang-en="Get in Touch" data-lang-es="Contáctame">Get in Touch</h2>
+            <div class="contact-content">
+                <p class="contact-intro" data-lang-en="I'm currently available for consulting opportunities and legal technology projects across Europe. Let's build something amazing together!" data-lang-es="Actualmente estoy disponible para oportunidades de consultoría y proyectos de tecnología legal en toda Europa. ¡Construyamos algo increíble juntos!">
+                    I'm currently available for consulting opportunities and legal technology projects across Europe. Let's build something amazing together!
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:rafael.montaner@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>rafael.montaner@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/rafaelmontaner" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/gudaraz" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.rafaelmontaner.com" target="_blank" class="contact-link">
+                        <i class="fas fa-globe"></i>
+                        <span data-lang-en="Website" data-lang-es="Sitio Web">Website</span>
+                    </a>
+                </div>
             </div>
-            <h2 class="card__title">TAPP LEGAL</h2>
-              <p class="card__text">TAPP LEGAL es una web aplicación de la empresa Total Abogados, donde tuve participación. Es un sistema de gestión de empresas y trabajadores que sirve para poder generar, administrar y producir documentación legal enfocada principalmente en temas de derecho laboral, sin perjuicio de que también ofrece documentos y contratos para otros propósitos.</p>
-              <p class="card__text">Mi contribución en el proyecto consistió en el diseño y creación de toda la documentación automática que genera la aplicación, donde se incluyen documentos que autocalculan indemnizaciones y otros pagos en el caso de salida de trabajadores de la empresa. El paquete de documentos es numeroso.  Junto con ello también diseñé los contratos que se generan para la propia compañía.  El diseño no solo importa el aspecto técnico del producto, sino que además el contenido del mismo, al ser abogado pude asegurarme del propio contenido del producto.</p>
-            <div class="buttons">
-              
-            </div>
-          </div>
-        </article>
-        <article class="card card--project">
-          <div class="card__image-container">
-            <img src="assets/images/documents.jpeg" alt="Landing Page" class="card__image">
-          </div>
-          <div class="project">
-            <div class="project__tags">
-              <span class="project__tag">#HTML</span>
-              <span class="project__tag">#CSS</span>
-              <span class="project__tag">#JS</span>
-              <span class="project__tag">#EJS</span>
-            </div>
-            <h2 class="card__title">Automatización de Documentos</h2>
-              <p class="card__text">Siendo abogado y programador, una de mis tareas principales es la de automatizar documentos.</p>
-              <p class="card__text">La automatización parte en la creación de un Workflow capaz de capturar todas las variables que el documento requiera, para ello ideé un flujo de preguntas de manera ordenada en una forma fácil de comprender pero que al mismo tiempo me diera, todo tipo de variables, incluyendo booleanos. Posteriormente en un template preparo la matriz del contrato o documento legal, preparo funciones y le doy un formato muy agradable a la vista. Hasta la fecha he sido capaz de automatizar cualquier documento que me han solicitado, y estos van de solicitudes sencillas, hasta cartas que contienen cálculo para el pago de indemnizaciones, usando solo la base de cálculo que ingresa el usuario. </p>
-            <div class="buttons">
-            </div>
-          </div>
-        </article>
-      </section>
-    </main>
-    <script src="js/scripts.js"></script>
-  </body>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Rafael Montaner. <span data-lang-en="All rights reserved." data-lang-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
